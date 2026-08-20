@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How much of your thinking still belongs to you? — AI report card waitlist</title>
+<meta name="description" content="One permission. Twenty seconds. Your AI week — classified by kind of use — and the number nobody has ever shown you: your Unaided Ratio. Founding waitlist open.">
+<meta property="og:title" content="Get your AI report card">
+<meta property="og:description" content="Your AI week, classified: work, study, companion, therapy-adjacent — plus your Unaided Ratio. More or less than you thought?">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flukejig.github.io/ai-report-card/">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #0c131b; color: #dce7ef; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 52px 0 12px; }
+  .kick { color: #2dd4bf; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+  h1 { font-size: clamp(30px, 6vw, 46px); letter-spacing: -0.02em; line-height: 1.08; margin: 12px 0 14px; color: #f2f8fb; }
+  h1 em { color: #2dd4bf; font-style: normal; }
+  h2 { font-size: clamp(21px, 4vw, 27px); color: #f2f8fb; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .sub { color: #9db4c4; font-size: 16.5px; max-width: 620px; }
+  .sub b { color: #e8f1f7; }
+  .card { background: #111c27; border: 1px solid #1e3040; border-radius: 14px; padding: 22px; }
+  .form { display: flex; gap: 10px; margin-top: 20px; max-width: 560px; }
+  .form input[type=email] { flex: 1; background: #0f1a24; border: 1px solid #2b4256; color: #f2f8fb; font-size: 16px; padding: 14px 16px; border-radius: 10px; outline: none; min-width: 0; }
+  .form input[type=email]:focus { border-color: #2dd4bf; }
+  .btn { background: #2dd4bf; color: #06201c; font-weight: 800; font-size: 16px; padding: 14px 22px; border: none; border-radius: 10px; cursor: pointer; white-space: nowrap; }
+  .btn:hover { background: #5eead4; }
+  .fine { color: #64809a; font-size: 12px; margin-top: 10px; }
+  .d30 { margin-top: 18px; max-width: 620px; }
+  .d30 .q { color: #a9c0d0; font-size: 13.5px; margin-bottom: 8px; }
+  .d30opts { display: flex; flex-wrap: wrap; gap: 8px; }
+  .d30opt { border: 1px solid #2b4256; background: #0f1a24; color: #a9c0d0; border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer; transition: all .15s; }
+  .d30opt:hover { border-color: #2dd4bf; color: #dce7ef; }
+  .d30opt.sel { border-color: #2dd4bf; background: #0f2a26; color: #2dd4bf; font-weight: 700; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .chip { border: 1px solid #1e3040; background: #0f1a24; border-radius: 999px; padding: 6px 13px; font-size: 12.5px; color: #a9c0d0; }
+  .chip b { color: #2dd4bf; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px; }
+  .step { background: #0f1a24; border: 1px solid #1e3040; border-radius: 12px; padding: 18px; }
+  .step b { color: #2dd4bf; font-size: 13px; letter-spacing: .08em; }
+  .step p { color: #a9c0d0; font-size: 13.5px; margin-top: 6px; }
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+  .vscol { border-radius: 12px; padding: 18px; font-size: 13.5px; }
+  .vscol.bad { background: #1a1214; border: 1px solid #3d2229; color: #c9a3a3; }
+  .vscol.good { background: #0f1f1c; border: 1px solid #1d453e; color: #a7d8cb; }
+  .vscol b { display: block; margin-bottom: 8px; font-size: 14px; }
+  .faq details { border-bottom: 1px solid #1e3040; padding: 14px 0; }
+  .faq summary { cursor: pointer; font-weight: 700; color: #e8f1f7; font-size: 15px; }
+  .faq p { color: #9db4c4; font-size: 14px; margin-top: 8px; }
+  .share { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .share a, .share button { background: #0f1a24; border: 1px solid #2b4256; color: #a9c0d0; font-size: 13px; padding: 9px 14px; border-radius: 999px; cursor: pointer; text-decoration: none; }
+  .share a:hover, .share button:hover { border-color: #2dd4bf; color: #2dd4bf; }
+  .src { color: #5c7488; font-size: 11px; margin-top: 16px; }
+  .foot { margin-top: 56px; padding: 22px 0 40px; border-top: 1px solid #1e3040; color: #5c7488; font-size: 12px; }
+  .lbl { font: 600 11px -apple-system, sans-serif; fill: #9db4c4; }
+  .lb2 { font: 500 10px -apple-system, sans-serif; fill: #64809a; }
+  .big { font: 800 22px -apple-system, sans-serif; fill: #f2f8fb; }
+  .acc { fill: #2dd4bf; } .acc2 { fill: #818cf8; } .acc3 { fill: #f59e0b; } .acc4 { fill: #f472b6; }
+  @media (max-width: 640px) { .vs { grid-template-columns: 1fr; } .form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<section class="wrap" id="hero">
+  <div class="kick">Coming to iOS this fall · Founding waitlist open</div>
+  <h1 id="h1">How much of your thinking still <em>belongs to you?</em></h1>
+  <p class="sub" id="sub">A billion people now talk to AI every week — for work, for homework, for company, for comfort. Nobody shows you what it's doing to your thinking. <b>We're building the app that does. One permission, twenty seconds: your AI week, classified — and your Unaided Ratio.</b></p>
+
+  <form id="wl" class="form" novalidate>
+    <input type="email" id="wl-email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address">
+    <button class="btn" type="submit" id="wl-cta">Get my AI report card</button>
+  </form>
+
+  <div class="d30" id="d30">
+    <div class="q">One honest question — what would actually bring you back on day 30?</div>
+    <div class="d30opts" id="d30opts">
+      <button type="button" class="d30opt" data-v="number">Watching my number move</button>
+      <button type="button" class="d30opt" data-v="streak">Keeping a streak alive</button>
+      <button type="button" class="d30opt" data-v="proof">Earning proof I did it myself</button>
+      <button type="button" class="d30opt" data-v="letter">A weekly letter about my week</button>
+    </div>
+  </div>
+
+  <div id="wl-done" style="display:none" class="fine">✓ You're on the list. Your report card arrives on launch day — founding members lock lifetime pricing.</div>
+  <div class="fine" id="wl-fine">Free launch week for waitlist members · Founding-member lifetime pricing · One email at launch, nothing else.</div>
+
+  <div class="chips" id="chips"></div>
+</section>
+
+<section class="wrap">
+  <h2>You won't believe your number.</h2>
+  <p class="sub">Not screen time. Not "productivity." Your actual relationship with AI — broken down by <i>kind</i> of use, with the patterns you can't see yourself.</p>
+  <div class="card" style="margin-top:16px">
+    <svg viewBox="0 0 820 250" style="width:100%;height:auto;display:block" role="img" aria-label="Sample AI report card">
+      <rect x="20" y="14" width="330" height="222" rx="22" fill="#0f1a24" stroke="#2dd4bf" stroke-width="1.5"/>
+      <text x="185" y="42" class="big" text-anchor="middle" font-size="14">Your AI week</text>
+      <text x="185" y="68" class="big" text-anchor="middle">12.5 hrs</text>
+      <rect x="46" y="88" width="180" height="13" rx="4" class="acc"/><text x="234" y="99" class="lbl">work · 6.0h</text>
+      <rect x="46" y="110" width="90" height="13" rx="4" class="acc4"/><text x="234" y="121" class="lbl">companion · 3.0h</text>
+      <rect x="46" y="132" width="60" height="13" rx="4" class="acc2"/><text x="234" y="143" class="lbl">study · 2.0h</text>
+      <rect x="46" y="154" width="45" height="13" rx="4" class="acc3"/><text x="234" y="165" class="lbl">therapy-adjacent · 1.5h</text>
+      <text x="46" y="192" class="lb2">1.5h of it after midnight</text>
+      <line x1="46" y1="206" x2="324" y2="206" stroke="#1e3040" stroke-width="1"/>
+      <text x="46" y="226" class="lbl" font-weight="800">You did <tspan fill="#2dd4bf" font-weight="800">38%</tspan> of your thinking unaided.</text>
+      <text x="440" y="60" class="lbl">And the line that stings:</text>
+      <text x="440" y="92" class="big" font-size="18">human-hours vs AI-hours</text>
+      <rect x="440" y="112" width="140" height="18" rx="5" class="acc2"/>
+      <rect x="580" y="112" width="105" height="18" rx="5" class="acc4"/>
+      <text x="440" y="146" class="lb2">with people █ 7.0h · with AI █ 12.5h</text>
+      <text x="440" y="186" class="lbl">Then one question:</text>
+      <text x="440" y="212" class="big" font-size="15">"More or less than you thought?"</text>
+    </svg>
+  </div>
+  <p class="src">Sample card. Yours is computed on your device — your content never leaves your phone.</p>
+</section>
+
+<section class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><b>01 — ONE PERMISSION</b><p>Install, grant screen-time access. Twenty seconds later: your number. No account needed to see it.</p></div>
+    <div class="step"><b>02 — YOUR REPORT CARD</b><p>Hours by AI app, classified by kind of use — companion, work, study, therapy-adjacent — with weekly trends and your Unaided Ratio.</p></div>
+    <div class="step"><b>03 — YOUR TRAINING</b><p>A daily 3-minute rep for your unaided mind, and a 20-second warm-up before the apps you flag. Streaks that forgive bad weeks. No shame. Ever.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Not another app blocker.</h2>
+  <p class="sub">Blockers fail because they block the AI you <i>need</i> — ChatGPT is a work tool now. We keep your productive use intact and train you through the compulsive patterns. AI isn't leaving. So train the part of you it replaces.</p>
+  <div class="vs">
+    <div class="vscol bad"><b>Screen-time apps (yesterday's war)</b>✗ "Distracting apps bad" — blunt blocklists<br>✗ Can't tell work from companionship<br>✗ Built for doomscrolling, not the AI era<br>✗ Shame and gimmicky lock screens</div>
+    <div class="vscol good"><b>Built for the AI age (us)</b>✓ Usage-type intelligence: work vs companion vs study<br>✓ Keeps the AI you need, trains you through the rest<br>✓ Mechanics with peer-reviewed evidence behind them<br>✓ Warm, private, on-device — no shame, ever</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Your AI use is your business.</h2>
+  <p class="sub">Everything is computed <b>on your device</b> — Apple's own sandbox makes it technically impossible for the report to leave your phone. Your conversations are never read, never uploaded, never sold. The subscription is the business model — not your data. Parents: you see your teen's <i>patterns</i>, never their content.</p>
+</section>
+
+<section class="wrap faq">
+  <h2>Questions</h2>
+  <details><summary>When does it launch?</summary><p>We're two founders building now, launching into the new iOS cycle this fall. Waitlist members get first access — and founding-member lifetime pricing as thanks for being early.</p></details>
+  <details><summary>How much will it cost?</summary><p>Planned at less than the leading screen-time app ($99.99/yr). Waitlist members get launch week free and a locked lifetime discount.</p></details>
+  <details><summary>Does it work for parents?</summary><p>Yes — a parent view shows your teen's AI usage patterns (hours, kinds of use, late-night trends) without ever reading their conversations. Built for worried parents, not for surveillance.</p></details>
+  <details><summary>What about AI used in a browser?</summary><p>Phone coverage at launch, including AI websites used in mobile browsers, with a desktop companion in development.</p></details>
+  <details><summary>Is AI use actually a problem?</summary><p>Total time isn't. Dependency patterns are — and the research is catching up fast (APA, 2026; MIT Media Lab, 2026; Brookings, 2026). The app measures the pattern, not just the clock — then trains it.</p></details>
+</section>
+
+<section class="wrap">
+  <h2>Know someone who needs their number?</h2>
+  <p class="sub">Everyone knows one person who talks to AI a little too much. Send them the question.</p>
+  <div class="share">
+    <a id="share-x" href="https://twitter.com/intent/tweet?text=How%20much%20of%20your%20thinking%20still%20belongs%20to%20you%3F%20There%27s%20an%20app%20coming%20that%20shows%20you%20%E2%80%94%20your%20AI%20report%20card%3A&url=https%3A%2F%2Fflukejig.github.io%2Fai-report-card%2F" target="_blank" rel="noopener">Share on X</a>
+    <button id="share-copy" type="button">Copy link</button>
+  </div>
+</section>
+
+<div class="wrap foot">
+  Built by two founders who use AI every day and want to keep it that way — on our terms.<br>
+  Evidence cited: The Verge (Aug 2026) · Higher Ed Dive (Jul 2026) · APA (2026) · Brookings (2026) · MIT Media Lab (2026) · The New York Times (Aug 2026) · The Guardian (Aug 2026).<br>
+  © 2026 · Founding waitlist · <span style="color:#2dd4bf">your AI report card</span>
+</div>
+
+<script>
+(function() {
+  // ── BACKEND CONFIG: set FORM_EMAIL to the collection inbox to go live (FormSubmit, no account).
+  var FORM_EMAIL = ""; // e.g. "founders@example.com" — first submission emails a one-click confirmation
+  var ENDPOINT = FORM_EMAIL ? ("https://formsubmit.co/ajax/" + FORM_EMAIL) : null;
+
+  // ── Three heroes (gate §11): A mirror · B gym · C prove-it ──
+  var VARIANTS = {
+    mirror: {
+      h1: 'How much of your thinking still <em>belongs to you?</em>',
+      sub: 'A billion people now talk to AI every week — for work, for homework, for company, for comfort. Nobody shows you what it\'s doing to your thinking. <b>We\'re building the app that does. One permission, twenty seconds: your AI week, classified — and your Unaided Ratio.</b>',
+      cta: 'Get my AI report card',
+      chips: [
+        '<b>1B</b> weekly ChatGPT users — fastest app ever (The Verge, Aug 2026)',
+        '<b>90%</b> of students use AI (Higher Ed Dive, Jul 2026)',
+        'Researchers are now documenting what AI does to thinking (APA, 2026)'
+      ]
+    },
+    gym: {
+      h1: 'The gym for your <em>unaided mind.</em>',
+      sub: 'AI isn\'t leaving — so train the part of you it replaces. A daily 3-minute rep. A 20-second warm-up before the apps you flag. Streaks that forgive bad weeks. <b>No shame. No locks. Just measurably stronger, starting with your Unaided Ratio.</b>',
+      cta: 'Start training',
+      chips: [
+        'Interruption beats willpower: <b>57%</b> usage reduction, peer-reviewed (PNAS)',
+        'Warmth outperforms shame <b>36×</b> in this category (app-store data, 2026)',
+        '"Redesign learning, don\'t retreat from AI" — the emerging consensus (2026)'
+      ]
+    },
+    prove: {
+      h1: 'Prove you can still do it <em>unaided.</em>',
+      sub: 'AI agents now take entire online courses for students. Campuses are going back to oral exams. Everyone suspects — nobody verifies. <b>Earn a cheat-proof certificate of work done without AI, and watch your Unaided Ratio climb. Your proof. Yours to show, never sold.</b>',
+      cta: 'Join the proving ground',
+      chips: [
+        'AI agents taking entire online courses for students (NYT, Aug 2026)',
+        'Denmark brought back oral, in-person defenses (The Guardian, Aug 2026)',
+        'The verification crisis is the story of this school year (Forbes, Aug 2026)'
+      ]
+    }
+  };
+
+  var params = new URLSearchParams(location.search);
+  var v = params.get('v');
+  if (!VARIANTS[v]) v = localStorage.getItem('hero') || 'mirror';
+  localStorage.setItem('hero', v);
+  var V = VARIANTS[v];
+
+  document.getElementById('h1').innerHTML = V.h1;
+  document.getElementById('sub').innerHTML = V.sub;
+  document.getElementById('wl-cta').textContent = V.cta;
+  document.title = V.h1.replace(/<[^>]+>/g, '') + ' — waitlist';
+  document.getElementById('chips').innerHTML = V.chips.map(function(c){ return '<span class="chip">' + c + '</span>'; }).join('');
+
+  // ── Day-30 question (feeds the loop-risk kill signal) ──
+  var day30 = '';
+  document.getElementById('d30opts').addEventListener('click', function(e) {
+    var b = e.target.closest('.d30opt'); if (!b) return;
+    var was = b.classList.contains('sel');
+    this.querySelectorAll('.d30opt').forEach(function(o){ o.classList.remove('sel'); });
+    if (!was) { b.classList.add('sel'); day30 = b.getAttribute('data-v'); } else { day30 = ''; }
+  });
+
+  // ── Signup capture: backend if configured, localStorage demo otherwise ──
+  function payload(email) {
+    return {
+      email: email,
+      day30: day30 || '(skipped)',
+      hero: v,
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      referrer: document.referrer || '',
+      page: location.href.split('?')[0],
+      ts: new Date().toISOString()
+    };
+  }
+
+  function succeed(msg) {
+    document.getElementById('wl').style.display = 'none';
+    document.getElementById('d30').style.display = 'none';
+    document.getElementById('wl-done').style.display = 'block';
+    if (msg) document.getElementById('wl-fine').textContent = msg;
+  }
+
+  document.getElementById('wl').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('wl-email').value.trim();
+    if (!email || email.indexOf('@') < 1) { document.getElementById('wl-email').focus(); return; }
+    var p = payload(email);
+
+    if (!ENDPOINT) {
+      var list = JSON.parse(localStorage.getItem('wl') || '[]');
+      list.push(p);
+      localStorage.setItem('wl', JSON.stringify(list));
+      succeed('You are signup #' + list.length + ' on this device (demo mode — set FORM_EMAIL to collect real signups).');
+      return;
+    }
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.assign({ _subject: 'Waitlist: ' + v + ' / ' + p.day30 }, p))
+    }).then(function(r) {
+      if (!r.ok) throw new Error('bad status');
+      succeed(null);
+    }).catch(function() {
+      var list = JSON.parse(localStorage.getItem('wl') || '[]');
+      list.push(p);
+      localStorage.setItem('wl', JSON.stringify(list));
+      succeed('Saved locally (network hiccup) — we\'ll still count you.');
+    });
+  });
+
+  // ── Share ──
+  document.getElementById('share-copy').addEventListener('click', function() {
+    var url = location.origin + location.pathname;
+    var b = this;
+    function done(){ b.textContent = 'Link copied ✓'; setTimeout(function(){ b.textContent = 'Copy link'; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done, done); }
+    else { var t = document.createElement('textarea'); t.value = url; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(t); done(); }
+  });
+})();
+</script>
+
+</body>
+</html>
