@@ -57,12 +57,25 @@
   .share a:hover, .share button:hover { border-color: #F5A623; color: #F5A623; }
   .src { color: #6B7680; font-size: 11px; margin-top: 16px; }
   .foot { margin-top: 56px; padding: 22px 0 40px; border-top: 1px solid #262D33; color: #6B7680; font-size: 12px; }
+  .f5g { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 16px; }
+  .f5 { background: #181C1F; border: 1px solid #262D33; border-radius: 12px; padding: 14px; }
+  .f5 b { color: #F5A623; font-size: 12.5px; display: block; margin-bottom: 4px; }
+  .f5 p { color: #9AA6AF; font-size: 12px; line-height: 1.45; }
+  .found { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .fcol { border-radius: 12px; padding: 16px; font-size: 13px; }
+  .fcol.free { background: #181C1F; border: 1px solid #262D33; color: #9AA6AF; }
+  .fcol.founding { background: #1A1610; border: 1px solid #F5A623; color: #EDE7DB; }
+  .fcol b { display: block; margin-bottom: 6px; font-size: 13.5px; color: #F2F5F6; }
+  .fcol.founding b { color: #F5A623; }
+  .fcol .pr { font-size: 20px; font-weight: 800; margin: 2px 0 6px; color: #F2F5F6; }
+  .fcol ul { margin-left: 16px; }
+  .fcol li { margin: 2px 0; }
   .lbl { font: 600 11px -apple-system, sans-serif; fill: #9AA6AF; }
   .lb2 { font: 500 10px -apple-system, sans-serif; fill: #6B7680; }
   .big { font: 800 22px -apple-system, sans-serif; fill: #F2F5F6; }
   .heroNum { font: 800 64px -apple-system, sans-serif; fill: #34C77B; letter-spacing: -0.02em; }
   .catW { fill: #9AA6AF; } .catC { fill: #F5A623; } .catS { fill: #34C77B; } .catT { fill: #6B7680; }
-  @media (max-width: 640px) { .vs { grid-template-columns: 1fr; } .form { flex-direction: column; } }
+  @media (max-width: 640px) { .vs { grid-template-columns: 1fr; } .form { flex-direction: column; } .found { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -120,8 +133,23 @@
   <h2>How it works</h2>
   <div class="steps">
     <div class="step"><b>01 — ONE PERMISSION</b><p>Install, grant screen-time access. Twenty seconds later: your number. No account needed to see it.</p></div>
-    <div class="step"><b>02 — YOUR AI WEEK, CLASSIFIED</b><p>Hours by AI app, broken down by kind of use — companion, work, study, therapy-adjacent — with weekly trends and your Unaided Ratio.</p></div>
-    <div class="step"><b>03 — YOUR TRAINING</b><p>A daily 3-minute rep for your unaided mind, and a 20-second warm-up before the apps you flag. Streaks that forgive bad weeks. No shame. Ever.</p></div>
+    <div class="step"><b>02 — THE MIRROR</b><p>Your AI week, classified by kind of use — companion, work, study, therapy-adjacent — with weekly trends and your Unaided Ratio.</p></div>
+    <div class="step"><b>03 — THE REP + THE TOLL</b><p>A daily 3-minute rep for your unaided mind — and the Toll: a 20-second warm-up from your own material before the apps you flag. Streaks that forgive bad weeks. No shame. Ever.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>What you get at launch — five things, each with a name.</h2>
+  <div class="f5g">
+    <div class="f5"><b>The Mirror</b><p>Your AI week, classified — and your Unaided Ratio. The 20-second aha.</p></div>
+    <div class="f5"><b>The Daily Rep</b><p>Three minutes from your own week. Recall, argue, draft, math.</p></div>
+    <div class="f5"><b>The Toll</b><p>A 20-second warm-up before the AI apps you flag. Always skippable, never a lock.</p></div>
+    <div class="f5"><b>The Score</b><p>Your number, every Friday — with milestone moments at 7, 30, 100 days.</p></div>
+    <div class="f5"><b>The Sunday Letter</b><p>Your week, read back to you: one observation, one win, one experiment.</p></div>
+  </div>
+  <div class="found">
+    <div class="fcol free"><b>Free, forever</b><ul><li>The Mirror (your week, classified)</li><li>The Daily Rep + streaks</li><li>The Toll</li><li>The Sunday Letter</li></ul></div>
+    <div class="fcol founding"><b>Founding members — <span class="pr">$29.99</span> year one (list $79.99/yr)</b><ul><li>The Score: history + milestones</li><li>Streak protection</li><li>The credential path (verified unaided certificate)</li><li>Family plan option · the Ledger archive</li><li>Founding badge, day-one flagged forever</li></ul></div>
   </div>
 </section>
 
@@ -143,7 +171,7 @@
   <h2>Questions</h2>
   <details><summary id="faq-name-q">What is Wake?</summary><p id="faq-name-a">Wake is the gym for your unaided mind. It shows you how much of your thinking still belongs to you — your Unaided Ratio — then trains it: a daily 3-minute rep, a 20-second warm-up before the AI apps you flag, and a score that tracks the strength you build. No shame, no locks, no lectures.</p></details>
   <details><summary>When does it launch?</summary><p>We're two founders building now, launching into the new iOS cycle this fall. Waitlist members get first access — and founding pricing as thanks for being early.</p></details>
-  <details><summary>How much will it cost?</summary><p>Planned: $79.99/yr — under the leading screen-time app ($99.99) with more inside: the mirror, the gym, the score. Founding waitlist members lock <b>$29.99 for year one</b>. A family plan (parents see patterns, never content) is planned at $129.99/yr.</p></details>
+  <details><summary>How much will it cost?</summary><p>Planned: $79.99/yr — under the leading screen-time app ($99.99) with more inside: the Mirror, the Toll, the Score. Founding waitlist members lock <b>$29.99 for year one</b> (or $149.99 lifetime). A family plan (parents see patterns, never content) is planned at $129.99/yr. HSA/FSA eligibility is being set up via Truemed — and yes, you can gift a founding year to someone who needs their number.</p></details>
   <details><summary>What is the campus pilot?</summary><p>A small cohort of instructors, integrity officers, and L&amp;D teams testing user-initiated unaided verification this academic year. Students and employees earn a cheat-proof certificate during a verified no-AI window — and choose what to share. We never sell scores, and nobody is assessed without opting in.</p></details>
   <details><summary>Does it work for parents?</summary><p>Yes — a parent view shows your teen's AI usage patterns (hours, kinds of use, late-night trends) without ever reading their conversations. Built for worried parents, not for surveillance.</p></details>
   <details><summary>What about AI used in a browser?</summary><p>Phone coverage at launch, including AI websites used in mobile browsers, with a desktop companion in development.</p></details>
@@ -190,7 +218,8 @@
         ['number', 'Watching my number move'],
         ['streak', 'Keeping a streak alive'],
         ['proof', 'Earning proof I did it myself'],
-        ['letter', 'A weekly letter about my week']
+        ['letter', 'A weekly letter about my week'],
+        ['toll', 'A pause before my AI apps open']
       ]
     },
     gym: {
@@ -207,7 +236,8 @@
         ['number', 'Watching my number move'],
         ['streak', 'Keeping a streak alive'],
         ['proof', 'Earning proof I did it myself'],
-        ['letter', 'A weekly letter about my week']
+        ['letter', 'A weekly letter about my week'],
+        ['toll', 'A pause before my AI apps open']
       ]
     },
     prove: {
@@ -224,7 +254,8 @@
         ['number', 'Watching my number move'],
         ['streak', 'Keeping a streak alive'],
         ['proof', 'Earning proof I did it myself'],
-        ['letter', 'A weekly letter about my week']
+        ['letter', 'A weekly letter about my week'],
+        ['toll', 'A pause before my AI apps open']
       ]
     },
     campus: {
