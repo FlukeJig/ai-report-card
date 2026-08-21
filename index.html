@@ -3,68 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How much of your thinking still belongs to you? — AI report card waitlist</title>
+<meta name="robots" content="noindex">
+<title>How much of your thinking still belongs to you? — Wake waitlist</title>
 <meta name="description" content="One permission. Twenty seconds. Your AI week — classified by kind of use — and the number nobody has ever shown you: your Unaided Ratio. Founding waitlist open.">
-<meta property="og:title" content="Get your AI report card">
+<meta property="og:title" content="How much of your thinking still belongs to you?">
 <meta property="og:description" content="Your AI week, classified: work, study, companion, therapy-adjacent — plus your Unaided Ratio. More or less than you thought?">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flukejig.github.io/ai-report-card/">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: #0c131b; color: #dce7ef; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; }
+  body { background: #0F1214; color: #F2F5F6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; }
   .wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
   section { padding: 52px 0 12px; }
-  .kick { color: #2dd4bf; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
-  h1 { font-size: clamp(30px, 6vw, 46px); letter-spacing: -0.02em; line-height: 1.08; margin: 12px 0 14px; color: #f2f8fb; }
-  h1 em { color: #2dd4bf; font-style: normal; }
-  h2 { font-size: clamp(21px, 4vw, 27px); color: #f2f8fb; margin-bottom: 12px; letter-spacing: -0.01em; }
-  .sub { color: #9db4c4; font-size: 16.5px; max-width: 620px; }
-  .sub b { color: #e8f1f7; }
-  .card { background: #111c27; border: 1px solid #1e3040; border-radius: 14px; padding: 22px; }
+  .kick { color: #F5A623; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+  .kick .brand { color: #F2F5F6; }
+  h1 { font-size: clamp(30px, 6vw, 46px); letter-spacing: -0.02em; line-height: 1.08; margin: 12px 0 14px; color: #F2F5F6; }
+  h1 em { color: #F5A623; font-style: normal; }
+  h2 { font-size: clamp(21px, 4vw, 27px); color: #F2F5F6; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .sub { color: #9AA6AF; font-size: 16.5px; max-width: 620px; }
+  .sub b { color: #F2F5F6; }
+  .card { background: #181C1F; border: 1px solid #262D33; border-radius: 14px; padding: 22px; }
   .form { display: flex; gap: 10px; margin-top: 20px; max-width: 560px; }
-  .form input[type=email] { flex: 1; background: #0f1a24; border: 1px solid #2b4256; color: #f2f8fb; font-size: 16px; padding: 14px 16px; border-radius: 10px; outline: none; min-width: 0; }
-  .form input[type=email]:focus { border-color: #2dd4bf; }
-  .btn { background: #2dd4bf; color: #06201c; font-weight: 800; font-size: 16px; padding: 14px 22px; border: none; border-radius: 10px; cursor: pointer; white-space: nowrap; }
-  .btn:hover { background: #5eead4; }
-  .fine { color: #64809a; font-size: 12px; margin-top: 10px; }
+  .form input[type=email] { flex: 1; background: #0F1214; border: 1px solid #2E373E; color: #F2F5F6; font-size: 16px; padding: 14px 16px; border-radius: 10px; outline: none; min-width: 0; }
+  .form input[type=email]:focus { border-color: #F5A623; }
+  .btn { background: #F5A623; color: #171104; font-weight: 800; font-size: 16px; padding: 14px 22px; border: none; border-radius: 10px; cursor: pointer; white-space: nowrap; }
+  .btn:hover { background: #FFB73E; }
+  .fine { color: #6B7680; font-size: 12px; margin-top: 10px; }
+  .fine b { color: #F5A623; }
   .d30 { margin-top: 18px; max-width: 620px; }
-  .d30 .q { color: #a9c0d0; font-size: 13.5px; margin-bottom: 8px; }
+  .d30 .q { color: #9AA6AF; font-size: 13.5px; margin-bottom: 8px; }
   .d30opts { display: flex; flex-wrap: wrap; gap: 8px; }
-  .d30opt { border: 1px solid #2b4256; background: #0f1a24; color: #a9c0d0; border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer; transition: all .15s; }
-  .d30opt:hover { border-color: #2dd4bf; color: #dce7ef; }
-  .d30opt.sel { border-color: #2dd4bf; background: #0f2a26; color: #2dd4bf; font-weight: 700; }
+  .d30opt { border: 1px solid #2E373E; background: #0F1214; color: #9AA6AF; border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer; transition: all .15s; }
+  .d30opt:hover { border-color: #F5A623; color: #F2F5F6; }
+  .d30opt.sel { border-color: #F5A623; background: #1E1A10; color: #F5A623; font-weight: 700; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
-  .chip { border: 1px solid #1e3040; background: #0f1a24; border-radius: 999px; padding: 6px 13px; font-size: 12.5px; color: #a9c0d0; }
-  .chip b { color: #2dd4bf; }
+  .chip { border: 1px solid #262D33; background: #181C1F; border-radius: 999px; padding: 6px 13px; font-size: 12.5px; color: #9AA6AF; }
+  .chip b { color: #F5A623; }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px; }
-  .step { background: #0f1a24; border: 1px solid #1e3040; border-radius: 12px; padding: 18px; }
-  .step b { color: #2dd4bf; font-size: 13px; letter-spacing: .08em; }
-  .step p { color: #a9c0d0; font-size: 13.5px; margin-top: 6px; }
+  .step { background: #181C1F; border: 1px solid #262D33; border-radius: 12px; padding: 18px; }
+  .step b { color: #F5A623; font-size: 13px; letter-spacing: .08em; }
+  .step p { color: #9AA6AF; font-size: 13.5px; margin-top: 6px; }
   .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
   .vscol { border-radius: 12px; padding: 18px; font-size: 13.5px; }
-  .vscol.bad { background: #1a1214; border: 1px solid #3d2229; color: #c9a3a3; }
-  .vscol.good { background: #0f1f1c; border: 1px solid #1d453e; color: #a7d8cb; }
+  .vscol.bad { background: #141719; border: 1px solid #262D33; color: #8A949D; }
+  .vscol.good { background: #121A15; border: 1px solid #1E4030; color: #A9D9BE; }
   .vscol b { display: block; margin-bottom: 8px; font-size: 14px; }
-  .faq details { border-bottom: 1px solid #1e3040; padding: 14px 0; }
-  .faq summary { cursor: pointer; font-weight: 700; color: #e8f1f7; font-size: 15px; }
-  .faq p { color: #9db4c4; font-size: 14px; margin-top: 8px; }
+  .faq details { border-bottom: 1px solid #262D33; padding: 14px 0; }
+  .faq summary { cursor: pointer; font-weight: 700; color: #F2F5F6; font-size: 15px; }
+  .faq p { color: #9AA6AF; font-size: 14px; margin-top: 8px; }
   .share { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-  .share a, .share button { background: #0f1a24; border: 1px solid #2b4256; color: #a9c0d0; font-size: 13px; padding: 9px 14px; border-radius: 999px; cursor: pointer; text-decoration: none; }
-  .share a:hover, .share button:hover { border-color: #2dd4bf; color: #2dd4bf; }
-  .src { color: #5c7488; font-size: 11px; margin-top: 16px; }
-  .foot { margin-top: 56px; padding: 22px 0 40px; border-top: 1px solid #1e3040; color: #5c7488; font-size: 12px; }
-  .lbl { font: 600 11px -apple-system, sans-serif; fill: #9db4c4; }
-  .lb2 { font: 500 10px -apple-system, sans-serif; fill: #64809a; }
-  .big { font: 800 22px -apple-system, sans-serif; fill: #f2f8fb; }
-  .acc { fill: #2dd4bf; } .acc2 { fill: #818cf8; } .acc3 { fill: #f59e0b; } .acc4 { fill: #f472b6; }
+  .share a, .share button { background: #181C1F; border: 1px solid #2E373E; color: #9AA6AF; font-size: 13px; padding: 9px 14px; border-radius: 999px; cursor: pointer; text-decoration: none; }
+  .share a:hover, .share button:hover { border-color: #F5A623; color: #F5A623; }
+  .src { color: #6B7680; font-size: 11px; margin-top: 16px; }
+  .foot { margin-top: 56px; padding: 22px 0 40px; border-top: 1px solid #262D33; color: #6B7680; font-size: 12px; }
+  .lbl { font: 600 11px -apple-system, sans-serif; fill: #9AA6AF; }
+  .lb2 { font: 500 10px -apple-system, sans-serif; fill: #6B7680; }
+  .big { font: 800 22px -apple-system, sans-serif; fill: #F2F5F6; }
+  .heroNum { font: 800 64px -apple-system, sans-serif; fill: #34C77B; letter-spacing: -0.02em; }
+  .catW { fill: #9AA6AF; } .catC { fill: #F5A623; } .catS { fill: #34C77B; } .catT { fill: #6B7680; }
   @media (max-width: 640px) { .vs { grid-template-columns: 1fr; } .form { flex-direction: column; } }
 </style>
 </head>
 <body>
 
+
 <section class="wrap" id="hero">
-  <div class="kick">Coming to iOS this fall · Founding waitlist open</div>
+  <div class="kick"><span class="brand" id="brand-kick">Wake</span> · Coming to iOS this fall · Founding waitlist open</div>
   <h1 id="h1">How much of your thinking still <em>belongs to you?</em></h1>
   <p class="sub" id="sub">A billion people now talk to AI every week — for work, for homework, for company, for comfort. Nobody shows you what it's doing to your thinking. <b>We're building the app that does. One permission, twenty seconds: your AI week, classified — and your Unaided Ratio.</b></p>
 
@@ -74,40 +79,35 @@
   </form>
 
   <div class="d30" id="d30">
-    <div class="q">One honest question — what would actually bring you back on day 30?</div>
-    <div class="d30opts" id="d30opts">
-      <button type="button" class="d30opt" data-v="number">Watching my number move</button>
-      <button type="button" class="d30opt" data-v="streak">Keeping a streak alive</button>
-      <button type="button" class="d30opt" data-v="proof">Earning proof I did it myself</button>
-      <button type="button" class="d30opt" data-v="letter">A weekly letter about my week</button>
-    </div>
+    <div class="q" id="d30-q">One honest question — what would actually bring you back on day 30?</div>
+    <div class="d30opts" id="d30opts"></div>
   </div>
 
-  <div id="wl-done" style="display:none" class="fine">✓ You're on the list. Your report card arrives on launch day — founding members lock lifetime pricing.</div>
-  <div class="fine" id="wl-fine">Free launch week for waitlist members · Founding-member lifetime pricing · One email at launch, nothing else.</div>
+  <div id="wl-done" style="display:none" class="fine">✓ You're on the list. Your report card arrives on launch day — founding members lock <b>$29.99 for year one</b> (list $79.99/yr).</div>
+  <div class="fine" id="wl-fine">Founding waitlist: <b>$29.99 for year one</b> (list $79.99/yr) · One email at launch, nothing else.</div>
 
   <div class="chips" id="chips"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="sec-mirror">
   <h2>You won't believe your number.</h2>
   <p class="sub">Not screen time. Not "productivity." Your actual relationship with AI — broken down by <i>kind</i> of use, with the patterns you can't see yourself.</p>
   <div class="card" style="margin-top:16px">
     <svg viewBox="0 0 820 250" style="width:100%;height:auto;display:block" role="img" aria-label="Sample AI report card">
-      <rect x="20" y="14" width="330" height="222" rx="22" fill="#0f1a24" stroke="#2dd4bf" stroke-width="1.5"/>
+      <rect x="20" y="14" width="330" height="222" rx="22" fill="#0F1214" stroke="#F5A623" stroke-width="1.5"/>
       <text x="185" y="42" class="big" text-anchor="middle" font-size="14">Your AI week</text>
       <text x="185" y="68" class="big" text-anchor="middle">12.5 hrs</text>
-      <rect x="46" y="88" width="180" height="13" rx="4" class="acc"/><text x="234" y="99" class="lbl">work · 6.0h</text>
-      <rect x="46" y="110" width="90" height="13" rx="4" class="acc4"/><text x="234" y="121" class="lbl">companion · 3.0h</text>
-      <rect x="46" y="132" width="60" height="13" rx="4" class="acc2"/><text x="234" y="143" class="lbl">study · 2.0h</text>
-      <rect x="46" y="154" width="45" height="13" rx="4" class="acc3"/><text x="234" y="165" class="lbl">therapy-adjacent · 1.5h</text>
+      <rect x="46" y="88" width="180" height="13" rx="4" class="catW"/><text x="234" y="99" class="lbl">work · 6.0h</text>
+      <rect x="46" y="110" width="90" height="13" rx="4" class="catC"/><text x="234" y="121" class="lbl">companion · 3.0h</text>
+      <rect x="46" y="132" width="60" height="13" rx="4" class="catS"/><text x="234" y="143" class="lbl">study · 2.0h</text>
+      <rect x="46" y="154" width="45" height="13" rx="4" class="catT"/><text x="234" y="165" class="lbl">therapy-adjacent · 1.5h</text>
       <text x="46" y="192" class="lb2">1.5h of it after midnight</text>
-      <line x1="46" y1="206" x2="324" y2="206" stroke="#1e3040" stroke-width="1"/>
-      <text x="46" y="226" class="lbl" font-weight="800">You did <tspan fill="#2dd4bf" font-weight="800">38%</tspan> of your thinking unaided.</text>
+      <line x1="46" y1="206" x2="324" y2="206" stroke="#262D33" stroke-width="1"/>
+      <text x="46" y="226" class="lbl" font-weight="800">You did <tspan fill="#34C77B" font-weight="800">38%</tspan> of your thinking unaided.</text>
       <text x="440" y="60" class="lbl">And the line that stings:</text>
       <text x="440" y="92" class="big" font-size="18">human-hours vs AI-hours</text>
-      <rect x="440" y="112" width="140" height="18" rx="5" class="acc2"/>
-      <rect x="580" y="112" width="105" height="18" rx="5" class="acc4"/>
+      <rect x="440" y="112" width="140" height="18" rx="5" class="catS"/>
+      <rect x="580" y="112" width="105" height="18" rx="5" class="catC"/>
       <text x="440" y="146" class="lb2">with people █ 7.0h · with AI █ 12.5h</text>
       <text x="440" y="186" class="lbl">Then one question:</text>
       <text x="440" y="212" class="big" font-size="15">"More or less than you thought?"</text>
@@ -141,44 +141,55 @@
 
 <section class="wrap faq">
   <h2>Questions</h2>
-  <details><summary>When does it launch?</summary><p>We're two founders building now, launching into the new iOS cycle this fall. Waitlist members get first access — and founding-member lifetime pricing as thanks for being early.</p></details>
-  <details><summary>How much will it cost?</summary><p>Planned at less than the leading screen-time app ($99.99/yr). Waitlist members get launch week free and a locked lifetime discount.</p></details>
+  <details><summary id="faq-name-q">What is Wake?</summary><p id="faq-name-a">Wake is the gym for your unaided mind. It shows you how much of your thinking still belongs to you — your Unaided Ratio — then trains it: a daily 3-minute rep, a 20-second warm-up before the AI apps you flag, and a score that tracks the strength you build. No shame, no locks, no lectures.</p></details>
+  <details><summary>When does it launch?</summary><p>We're two founders building now, launching into the new iOS cycle this fall. Waitlist members get first access — and founding pricing as thanks for being early.</p></details>
+  <details><summary>How much will it cost?</summary><p>Planned: $79.99/yr — under the leading screen-time app ($99.99) with more inside: the mirror, the gym, the score. Founding waitlist members lock <b>$29.99 for year one</b>. A family plan (parents see patterns, never content) is planned at $129.99/yr.</p></details>
+  <details><summary>What is the campus pilot?</summary><p>A small cohort of instructors, integrity officers, and L&amp;D teams testing user-initiated unaided verification this academic year. Students and employees earn a cheat-proof certificate during a verified no-AI window — and choose what to share. We never sell scores, and nobody is assessed without opting in.</p></details>
   <details><summary>Does it work for parents?</summary><p>Yes — a parent view shows your teen's AI usage patterns (hours, kinds of use, late-night trends) without ever reading their conversations. Built for worried parents, not for surveillance.</p></details>
   <details><summary>What about AI used in a browser?</summary><p>Phone coverage at launch, including AI websites used in mobile browsers, with a desktop companion in development.</p></details>
-  <details><summary>Is AI use actually a problem?</summary><p>Total time isn't. Dependency patterns are — and the research is catching up fast (APA, 2026; MIT Media Lab, 2026; Brookings, 2026). The app measures the pattern, not just the clock — then trains it.</p></details>
+  <details><summary>Is AI use actually a problem?</summary><p>Total time isn't. Dependency patterns are — and the research is catching up fast (APA, 2026; Brookings, 2026; Frontiers, 2026). The app measures the pattern, not just the clock — then trains it.</p></details>
 </section>
 
 <section class="wrap">
   <h2>Know someone who needs their number?</h2>
   <p class="sub">Everyone knows one person who talks to AI a little too much. Send them the question.</p>
   <div class="share">
-    <a id="share-x" href="https://twitter.com/intent/tweet?text=How%20much%20of%20your%20thinking%20still%20belongs%20to%20you%3F%20There%27s%20an%20app%20coming%20that%20shows%20you%20%E2%80%94%20your%20AI%20report%20card%3A&url=https%3A%2F%2Fflukejig.github.io%2Fai-report-card%2F" target="_blank" rel="noopener">Share on X</a>
+    <a id="share-x" href="https://twitter.com/intent/tweet?text=How%20much%20of%20your%20thinking%20still%20belongs%20to%20you%3F%20There%27s%20an%20app%20coming%20that%20shows%20you%3A&url=https%3A%2F%2Fflukejig.github.io%2Fai-report-card%2F" target="_blank" rel="noopener">Share on X</a>
     <button id="share-copy" type="button">Copy link</button>
   </div>
 </section>
 
 <div class="wrap foot">
   Built by two founders who use AI every day and want to keep it that way — on our terms.<br>
-  Evidence cited: The Verge (Aug 2026) · Higher Ed Dive (Jul 2026) · APA (2026) · Brookings (2026) · MIT Media Lab (2026) · The New York Times (Aug 2026) · The Guardian (Aug 2026).<br>
-  © 2026 · Founding waitlist · <span style="color:#2dd4bf">your AI report card</span>
+  Evidence cited: The Information (Jul 2026) · The New York Times (Aug 2026) · Phys.org (Aug 2026) · The Guardian (Aug 2026) · APA (2026) · Brookings (2026) · Higher Ed Dive (Jul 2026).<br>
+  © 2026 <span id="brand-foot">Wake</span> · Founding waitlist · <span style="color:#F5A623">your AI report card</span>
 </div>
 
 <script>
 (function() {
-  // ── BACKEND CONFIG: set FORM_EMAIL to the collection inbox to go live (FormSubmit, no account).
-  var FORM_EMAIL = "mindwakeapp@gmail.com"; // FormSubmit — confirmation email sent on first submission
+  var FORM_EMAIL = "mindwakeapp@gmail.com"; // FormSubmit — already activated (v2)
   var ENDPOINT = FORM_EMAIL ? ("https://formsubmit.co/ajax/" + FORM_EMAIL) : null;
 
-  // ── Three heroes (gate §11): A mirror · B gym · C prove-it ──
+  // ── Names (founder decision pending — v8 §9): ?n=wake|stoke|halftide ──
+  var NAMES = { wake: "Wake", stoke: "Stoke", halftide: "Halftide" };
+
+  // ── Four heroes (gate §11 + Monetization v3 Change 4) ──
   var VARIANTS = {
     mirror: {
       h1: 'How much of your thinking still <em>belongs to you?</em>',
       sub: 'A billion people now talk to AI every week — for work, for homework, for company, for comfort. Nobody shows you what it\'s doing to your thinking. <b>We\'re building the app that does. One permission, twenty seconds: your AI week, classified — and your Unaided Ratio.</b>',
       cta: 'Get my AI report card',
       chips: [
-        '<b>1B</b> weekly ChatGPT users — fastest app ever (The Verge, Aug 2026)',
+        '<b>~1B</b> weekly ChatGPT users (The Information, Jul 2026)',
         '<b>90%</b> of students use AI (Higher Ed Dive, Jul 2026)',
         'Researchers are now documenting what AI does to thinking (APA, 2026)'
+      ],
+      d30q: 'One honest question — what would actually bring you back on day 30?',
+      d30: [
+        ['number', 'Watching my number move'],
+        ['streak', 'Keeping a streak alive'],
+        ['proof', 'Earning proof I did it myself'],
+        ['letter', 'A weekly letter about my week']
       ]
     },
     gym: {
@@ -189,6 +200,13 @@
         'Interruption beats willpower: <b>57%</b> usage reduction, peer-reviewed (PNAS)',
         'Warmth outperforms shame <b>36×</b> in this category (app-store data, 2026)',
         '"Redesign learning, don\'t retreat from AI" — the emerging consensus (2026)'
+      ],
+      d30q: 'One honest question — what would actually bring you back on day 30?',
+      d30: [
+        ['number', 'Watching my number move'],
+        ['streak', 'Keeping a streak alive'],
+        ['proof', 'Earning proof I did it myself'],
+        ['letter', 'A weekly letter about my week']
       ]
     },
     prove: {
@@ -197,25 +215,64 @@
       cta: 'Join the proving ground',
       chips: [
         'AI agents taking entire online courses for students (NYT, Aug 2026)',
-        'Denmark brought back oral, in-person defenses (The Guardian, Aug 2026)',
-        'The verification crisis is the story of this school year (Forbes, Aug 2026)'
+        'Oral exams are making a comeback (Phys.org, Aug 2026)',
+        'Denmark brought back oral, in-person defenses (The Guardian, Aug 2026)'
+      ],
+      d30q: 'One honest question — what would actually bring you back on day 30?',
+      d30: [
+        ['number', 'Watching my number move'],
+        ['streak', 'Keeping a streak alive'],
+        ['proof', 'Earning proof I did it myself'],
+        ['letter', 'A weekly letter about my week']
+      ]
+    },
+    campus: {
+      h1: 'Their essays are perfect. <em>Can they defend them?</em>',
+      sub: 'AI agents now take entire online courses. Campuses are returning to oral defenses. Everyone suspects — nobody verifies. <b>We\'re piloting user-initiated, cheat-proof verification of work done unaided: a certificate students earn and choose to show. Never sold. Never surveillance.</b>',
+      cta: 'Join the campus pilot list',
+      chips: [
+        'AI agents taking entire online courses for students (NYT, Aug 2026)',
+        'Oral exams are making a comeback (Phys.org, Aug 2026)',
+        'The hiring-verification crisis (Forbes, Aug 2026)'
+      ],
+      d30q: 'You\'re joining as —',
+      d30: [
+        ['faculty', 'Faculty'],
+        ['integrity', 'Integrity / academic affairs'],
+        ['lnd', 'L&D / HR'],
+        ['student', 'Student'],
+        ['other', 'Other']
       ]
     }
   };
 
   var params = new URLSearchParams(location.search);
+
   var v = params.get('v');
   if (!VARIANTS[v]) v = localStorage.getItem('hero') || 'mirror';
   localStorage.setItem('hero', v);
   var V = VARIANTS[v];
 
+  var n = (params.get('n') || '').toLowerCase();
+  if (!NAMES[n]) n = localStorage.getItem('name') || 'wake';
+  localStorage.setItem('name', n);
+  var BRAND = NAMES[n];
+
+  document.getElementById('brand-kick').textContent = BRAND;
+  document.getElementById('brand-foot').textContent = BRAND;
+  document.getElementById('faq-name-q').textContent = 'What is ' + BRAND + '?';
+  document.getElementById('faq-name-a').textContent = BRAND + ' is the gym for your unaided mind. It shows you how much of your thinking still belongs to you — your Unaided Ratio — then trains it: a daily 3-minute rep, a 20-second warm-up before the AI apps you flag, and a score that tracks the strength you build. No shame, no locks, no lectures.';
+
   document.getElementById('h1').innerHTML = V.h1;
   document.getElementById('sub').innerHTML = V.sub;
   document.getElementById('wl-cta').textContent = V.cta;
-  document.title = V.h1.replace(/<[^>]+>/g, '') + ' — waitlist';
+  document.title = V.h1.replace(/<[^>]+>/g, '') + ' — ' + BRAND + ' waitlist';
   document.getElementById('chips').innerHTML = V.chips.map(function(c){ return '<span class="chip">' + c + '</span>'; }).join('');
+  document.getElementById('d30-q').textContent = V.d30q;
+  document.getElementById('d30opts').innerHTML = V.d30.map(function(o){
+    return '<button type="button" class="d30opt" data-v="' + o[0] + '">' + o[1] + '</button>';
+  }).join('');
 
-  // ── Day-30 question (feeds the loop-risk kill signal) ──
   var day30 = '';
   document.getElementById('d30opts').addEventListener('click', function(e) {
     var b = e.target.closest('.d30opt'); if (!b) return;
@@ -224,12 +281,12 @@
     if (!was) { b.classList.add('sel'); day30 = b.getAttribute('data-v'); } else { day30 = ''; }
   });
 
-  // ── Signup capture: backend if configured, localStorage demo otherwise ──
   function payload(email) {
     return {
       email: email,
       day30: day30 || '(skipped)',
       hero: v,
+      name_variant: n,
       utm_source: params.get('utm_source') || '',
       utm_medium: params.get('utm_medium') || '',
       utm_campaign: params.get('utm_campaign') || '',
@@ -256,13 +313,13 @@
       var list = JSON.parse(localStorage.getItem('wl') || '[]');
       list.push(p);
       localStorage.setItem('wl', JSON.stringify(list));
-      succeed('You are signup #' + list.length + ' on this device (demo mode — set FORM_EMAIL to collect real signups).');
+      succeed('You are signup #' + list.length + ' on this device (demo mode).');
       return;
     }
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(Object.assign({ _subject: 'Waitlist: ' + v + ' / ' + p.day30 }, p))
+      body: JSON.stringify(Object.assign({ _subject: 'Waitlist: ' + v + ' / ' + n + ' / ' + p.day30 }, p))
     }).then(function(r) {
       if (!r.ok) throw new Error('bad status');
       succeed(null);
@@ -274,7 +331,6 @@
     });
   });
 
-  // ── Share ──
   document.getElementById('share-copy').addEventListener('click', function() {
     var url = location.origin + location.pathname;
     var b = this;
